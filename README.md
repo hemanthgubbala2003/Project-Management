@@ -1,2 +1,2 @@
 # Project-Management
-Notes on project management course
+Notes on project management
