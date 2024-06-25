@@ -1,14 +1,12 @@
 Single Responsibility Principle(SRP):
 
-A class or package or component should have one and only one reason to change.
-
-Note: No no to monolithic classes and yes to breaking down responsibility, allows for easy testing, lower coupling and better organization.
-
+_A class or package or component should have one and only one reason to change.
+Note: No no to monolithic classes and yes to breaking down responsibility, allows for easy testing, lower coupling and better organization._
 
 Example:
 
-// Bad example: The UserService class handles both user authentication and email notifications
-
+Bad example: The UserService class handles both user authentication and email notifications
+```
 public class UserService {
     public void authenticate(String username, String password) {
         // Authentication logic
@@ -18,8 +16,9 @@ public class UserService {
         // Email sending logic
     }
 }
-
-// Good example: Separate classes for authentication and email notifications
+```
+Good example: Separate classes for authentication and email notifications
+```
 public class AuthService {
     public void authenticate(String username, String password) {
         // Authentication logic
@@ -32,15 +31,16 @@ public class EmailService {
     }
 }
 
+```
 
 
 Open/Closed Principle(abstraction):
 
-Software entities should be open for extension but closed for modification.
+_Software entities should be open for extension but closed for modification.
+Note: I think it is asking for abstraction. To create loosely coupled systems._
 
-Note: I think it is asking for abstraction. To create loosely coupled systems.
-
-// Bad example: Modifying a class to add new functionality
+Bad example: Modifying a class to add new functionality
+```
 public class Rectangle {
     public double width;
     public double height;
@@ -56,8 +56,9 @@ public class AreaCalculator {
         return Math.PI * circle.radius * circle.radius;
     }
 }
-
-// Good example: Using polymorphism to extend functionality
+```
+Good example: Using polymorphism to extend functionality
+```
 public abstract class Shape {
     public abstract double calculateArea();
 }
@@ -86,18 +87,16 @@ public class AreaCalculator {
         return shape.calculateArea();
     }
 }
-
+```
 
 
 Liskov Substitution Principle(polymorphism):
 
-objects in a program should be replaceable with instances of their subtypes without altering the correctness of that program.
+_Objects in a program should be replaceable with instances of their subtypes without altering the correctness of that program.
+"The derived types must not change the behavior of the base types" means that it must be possible to use a derived type as if you were using the base type. For instance, if you are able to call x = baseObj.DoSomeThing(123) you also must be able to call x = derivedObj.DoSomeThing(123). The derived method should not throw an exception if the base method didn't. A code using the base class should be able to work well with the derived class as well. It should not "see" that it is using another type. This does not mean that the derived class has to do exactly the same thing; that would be pointless. In other words using a derived type should not break the code that was running smoothly using the base type._
 
-
-"The derived types must not change the behavior of the base types" means that it must be possible to use a derived type as if you were using the base type. For instance, if you are able to call x = baseObj.DoSomeThing(123) you also must be able to call x = derivedObj.DoSomeThing(123). The derived method should not throw an exception if the base method didn't. A code using the base class should be able to work well with the derived class as well. It should not "see" that it is using another type. This does not mean that the derived class has to do exactly the same thing; that would be pointless. In other words using a derived type should not break the code that was running smoothly using the base type.
-
-
-// Bad example: Subclass changes the expected behavior of the superclass
+Bad example: Subclass changes the expected behavior of the superclass
+```
 public class Bird {
     public void fly() {
         System.out.println("Flying");
@@ -110,8 +109,10 @@ public class Ostrich extends Bird {
         throw new UnsupportedOperationException("Ostriches can't fly");
     }
 }
+```
 
-// Good example: Using a more appropriate hierarchy
+Good example: Using a more appropriate hierarchy
+```
 public abstract class Bird {
     public abstract void move();
 }
@@ -133,22 +134,24 @@ public class WalkingBird extends Bird {
 public class Ostrich extends WalkingBird {
     // Ostrich-specific behavior
 }
-
+```
 
 
 Interface Segregation Principle:
 
-The dependency of one class to another should depend on the smallest possible interface.
+_The dependency of one class to another should depend on the smallest possible interface.
+I.E Be careful when creating interfaces._
 
-I.E Be careful when creating interfaces.
-
-// Bad example: A large interface with many methods
+Bad example: A large interface with many methods
+```
 public interface Worker {
     void work();
     void eat();
 }
+```
 
-// Good example: Split into smaller, more specific interfaces
+Good example: Split into smaller, more specific interfaces
+```
 public interface Workable {
     void work();
 }
@@ -175,17 +178,17 @@ public class RobotWorker implements Workable {
         // Working logic
     }
 }
-
+```
 
 
 Dependency Inversion Principle :
 
-Depend on abstractions than concrete implementations.
-
+_Depend on abstractions than concrete implementations._
 
 Examples:
 
-// Bad example: High-level module depends on a low-level module
+Bad example: High-level module depends on a low-level module
+```
 public class Light {
     public void turnOn() {
         System.out.println("Light on");
@@ -207,8 +210,9 @@ public class Switch {
         light.turnOn();
     }
 }
-
-// Good example: Both high-level and low-level modules depend on an abstraction
+```
+Good example: Both high-level and low-level modules depend on an abstraction
+```
 public interface Switchable {
     void turnOn();
     void turnOff();
@@ -237,3 +241,4 @@ public class Switch {
         device.turnOn();
     }
 }
+```
