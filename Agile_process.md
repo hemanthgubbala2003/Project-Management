@@ -1,7 +1,6 @@
 USE CASE: When there is an urgent need to produce a product which can be developed in an incremental approach
 
 
-
 Step 1: Stake holder vision document
 
 	Document which contains the following
@@ -13,9 +12,9 @@ Step 1: Stake holder vision document
 	• Acceptance Criteria
 	• Anything else you can think of that could impact the project
 	
-	
-	
+		
 Step 2:  Create a talent and skills spreadsheet
+
 Step 3:  Scrum Board
 
 
@@ -46,10 +45,10 @@ Step 5: Product Backlog
 	
 	Backlog: It is a list of all the work that needs to be done.
 	
-		        It is a set of epics, features and user stories.
+		 It is a set of epics, features and user stories.
 		
 		
-	Work is broken down into chunks small enough to create , test and deliver within a sprint. It is broken down into these categories:
+Work is broken down into chunks small enough to create , test and deliver within a sprint. It is broken down into these categories:
 		
 		Feature: A main functionality of the final product.
 		
