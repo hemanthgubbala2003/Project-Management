@@ -1,7 +1,7 @@
-Single Responsibility Principle(SRP):
+**Single Responsibility Principle(SRP):**
 
-_A class or package or component should have one and only one reason to change.
-Note: No no to monolithic classes and yes to breaking down responsibility, allows for easy testing, lower coupling and better organization._
+__A class or package or component should have one and only one reason to change._
+_Note: No no to monolithic classes and yes to breaking down responsibility, allows for easy testing, lower coupling and better organization.__
 
 Example:
 
@@ -33,8 +33,7 @@ public class EmailService {
 
 ```
 
-
-Open/Closed Principle(abstraction):
+**Open/Closed Principle(abstraction):**
 
 _Software entities should be open for extension but closed for modification.
 Note: I think it is asking for abstraction. To create loosely coupled systems._
